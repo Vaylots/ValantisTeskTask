@@ -6,9 +6,9 @@ export function Header() {
 
   useEffect(() => {
     window.addEventListener("resize", () => {
-      setIsMobileResolution(window.screen.width < 1180);
+      setIsMobileResolution(window.window.innerWidth < 1180);
     });
-    setIsMobileResolution(window.screen.width < 1180);
+    setIsMobileResolution(window.window.innerWidth < 1180);
   }, []);
 
   return (
@@ -80,17 +80,24 @@ export function Header() {
                   </div>
                   <ul
                     tabIndex={0}
-                    className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                    className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52  "
                   >
                     <li>
-                      <a>Каталог</a>
+                      <a>
+                        <span>Каталог</span>
+                      </a>
                     </li>
                     <li>
-                      <a>О нас</a>
+                      <a>
+                        <span>О нас</span>
+                      </a>
                     </li>
                     <li>
-                      <a>Контакты</a>
+                      <a>
+                        <span>Контакты</span>
+                      </a>
                     </li>
+                    <div className="divider"></div>
                     <li>
                       <a>
                         <span>Корзина</span>
@@ -115,7 +122,9 @@ export function Header() {
                   <h1 className="text-3xl font-medium ">Jewelry</h1>
                 </a>
               </div>
-              <ThemeChangerComponent />
+              <div className="navbar-end">
+                <ThemeChangerComponent />
+              </div>
             </>
           )}
         </div>
